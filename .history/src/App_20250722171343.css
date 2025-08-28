@@ -1,0 +1,12 @@
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "satoshi";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
