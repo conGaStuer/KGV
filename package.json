@@ -19,7 +19,10 @@
     "react-player": "^3.3.1",
     "react-router-dom": "^7.7.0",
     "react-scripts": "5.0.1",
-    "sass": "^1.89.2",
+    "react-slick": "^0.31.0",
+    "sass": "^1.91.0",
+    "sass-loader": "^16.0.5",
+    "slick-carousel": "^1.8.1",
     "video.js": "^8.23.3",
     "web-vitals": "^2.1.4"
   },

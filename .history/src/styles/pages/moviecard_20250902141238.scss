@@ -1,0 +1,262 @@
+.home-landingg {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #000;
+  align-items: center;
+
+  .home-thumbb {
+    width: 90%;
+    height: auto;
+    .thumb-info {
+      width: 100%;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 20px 0px;
+      h3 {
+        margin: 0;
+        padding: 0;
+        font-size: 22px;
+        color: white;
+        letter-spacing: 0.8px;
+        font-weight: normal;
+      }
+      .info-detail {
+        font-weight: bold;
+        color: white;
+        span {
+          padding: 4px 10px;
+          font-size: 10px;
+          background-color: rgb(128, 128, 128);
+        }
+        button {
+          width: 110px;
+          height: 25px;
+          border-radius: 4px;
+          border: 1px solid white;
+          color: white;
+          background-color: transparent;
+          margin-left: 7px;
+          font-weight: bold;
+          font-size: 10px;
+
+          .icon {
+            font-size: 8px;
+            margin-right: 4px;
+            position: relative;
+            top: -0.5px;
+          }
+        }
+      }
+    }
+
+    .thumb-list {
+      height: 60%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .list-movie {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      .movie-poster-card {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: transparent;
+        font-family: "Satoshi", sans-serif;
+
+        .poster-image {
+          width: 45%;
+          height: auto;
+          aspect-ratio: 2 / 3;
+          border-radius: 12px;
+          background-size: cover;
+          background-position: center;
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.85);
+        }
+        .poster-actions {
+          margin-top: 10px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-bottom: 10px;
+          button {
+            background-color: rgba(110, 108, 108, 0.6);
+            color: white;
+            border: none;
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+
+            &:hover {
+              background-color: rgb(221, 0, 0);
+            }
+          }
+        }
+        .poster-detail {
+          color: white;
+          width: 100%;
+          padding: 20px 0px;
+          background-color: rgb(26, 28, 28);
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          line-height: 1.6;
+          font-family: Arial, sans-serif;
+
+          .detail-name {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+
+          .detail-origin {
+            font-size: 18px;
+            color: #e5322d; /* màu vàng nhấn giống chữ Demon Slayer */
+            margin-bottom: 10px;
+          }
+
+          p {
+            font-size: 15px;
+            margin: 2px 0;
+
+            .text {
+              font-size: 12px;
+              color: #d0d0d2;
+            }
+          }
+          .texture {
+            width: 100%;
+            height: auto;
+
+            p {
+              display: flex;
+              width: 60%;
+              justify-content: space-between;
+              margin-bottom: 20px;
+            }
+          }
+          .highlight {
+            background-color: #1a1c1c;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #ddd;
+            border: 1px solid white;
+          }
+          .highlight2 {
+            background-color: rgba(35, 187, 72, 0.5);
+            border: none;
+          }
+          .badge {
+            display: inline-block;
+            background-color: #2a2a2a;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 13px;
+            margin-right: 6px;
+          }
+        }
+      }
+      .list-ep {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 900px;
+        height: auto;
+        .list-control {
+          display: flex;
+          align-items: center;
+          gap: 25px;
+          margin-top: 20px;
+          color: white;
+          font-family: Arial, sans-serif;
+
+          /* nút xem ngay */
+          .btn-play {
+            background: linear-gradient(to right, #e5322d, #ffd45c);
+            color: black;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+
+            &:hover {
+              opacity: 0.9;
+            }
+          }
+
+          /* item icon + text */
+          .control-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 13px;
+            cursor: pointer;
+
+            .icon {
+              font-size: 18px;
+              margin-bottom: 5px;
+            }
+          }
+
+          /* nút đánh giá */
+          .rating {
+            margin-left: auto;
+            background: #3161e0;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            font-weight: bold;
+
+            .rating-score {
+              font-size: 16px;
+            }
+
+            .rating-text {
+              text-decoration: underline;
+              font-weight: normal;
+            }
+          }
+        }
+        .episode-list {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          left: 80px;
+        }
+        .episode-link {
+          &:hover {
+            background-color: rgb(221, 0, 0); /* đỏ khi hover */
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,457 @@
+.watch-page {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  .video-container {
+    background-color: #111;
+    video::-webkit-media-controls-panel {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    video::-webkit-media-controls-play-button {
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    video::-webkit-media-controls-timeline {
+      height: 5px;
+    }
+
+    video::-webkit-media-controls-current-time-display,
+    video::-webkit-media-controls-time-remaining-display {
+      color: white;
+    }
+  }
+  .watch-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 20px;
+    background-color: #111;
+    color: #fff;
+    font-size: 14px;
+
+    .control-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      color: #d0d0d0;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: rgba(254, 207, 89, 1); // màu vàng
+      }
+
+      .icon {
+        font-size: 16px;
+      }
+
+      &.report {
+        margin-left: auto; // đẩy "Báo lỗi" sang phải
+        color: #ff5b5b;
+
+        &:hover {
+          color: #ff8787;
+        }
+      }
+
+      &.toggle {
+        display: flex;
+        gap: 8px;
+
+        .switch {
+          padding: 2px 8px;
+          border-radius: 4px;
+          border: 1px solid #444;
+          font-size: 12px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &.on {
+            background-color: rgba(254, 207, 89, 0.15);
+            border-color: rgba(254, 207, 89, 1);
+            color: rgba(254, 207, 89, 1);
+          }
+
+          &.off {
+            background-color: transparent;
+            border-color: #444;
+            color: #aaa;
+          }
+        }
+      }
+    }
+  }
+  .right-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-left: 17px;
+    margin-bottom: 30px;
+    .control-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: #fff;
+      cursor: pointer;
+
+      .icon {
+        font-size: 16px;
+      }
+
+      &:not(:last-child) {
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        padding-right: 16px;
+      }
+    }
+
+    .rating-box {
+      background: #2f5ae0;
+      padding: 6px 14px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: #fff;
+      font-weight: 600;
+
+      .score {
+        font-size: 16px;
+      }
+
+      a {
+        color: #fff;
+        text-decoration: underline;
+        font-weight: 400;
+        &:hover {
+          color: #ffd966;
+        }
+      }
+    }
+  }
+  .comment-section {
+    background-color: #1a1a1d; // nền tối
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+
+    .comment-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h3 {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .tabs {
+        display: flex;
+        gap: 10px;
+
+        button {
+          background: transparent;
+          border: 1px solid #666;
+          padding: 5px 12px;
+          border-radius: 6px;
+          cursor: pointer;
+          color: #fff;
+
+          &.active {
+            background: #fff;
+            color: #000;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .comment-box {
+      margin-top: 15px;
+      background: #111;
+      border-radius: 8px;
+      padding: 10px;
+      border: 1px solid #333;
+
+      textarea {
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        resize: none;
+        height: 80px;
+        color: #fff;
+        font-size: 14px;
+
+        &::placeholder {
+          color: #888;
+        }
+      }
+
+      .comment-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        .spoiler-toggle {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          label {
+            font-size: 14px;
+            color: #bbb;
+          }
+        }
+
+        .send-btn {
+          background: #f5c542;
+          color: #000;
+          border: none;
+          padding: 6px 16px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-weight: bold;
+          transition: 0.2s;
+
+          &:hover {
+            background: #ffdd55;
+          }
+        }
+      }
+    }
+
+    .comment-list {
+      margin-top: 20px;
+
+      .comment-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 0;
+        border-bottom: 1px solid #2a2a2a;
+
+        .avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          overflow: hidden;
+          flex-shrink: 0;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .comment-content {
+          flex: 1;
+
+          .user-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            margin-bottom: 4px;
+
+            .name {
+              font-weight: bold;
+            }
+
+            .time {
+              color: #888;
+              font-size: 12px;
+            }
+          }
+
+          .text {
+            font-size: 15px;
+            line-height: 1.4;
+            margin-bottom: 6px;
+          }
+
+          .actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            button {
+              background: none;
+              border: none;
+              color: #aaa;
+              font-size: 13px;
+              cursor: pointer;
+              transition: 0.2s;
+
+              &:hover {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .page-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; // trái rộng hơn
+    gap: 20px;
+  }
+  .recommend-section {
+    background: #1a1a1d;
+    border-radius: 10px;
+    padding: 15px;
+
+    h3 {
+      margin-bottom: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .recommend-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+
+      img {
+        width: 90px;
+        height: 120px;
+        border-radius: 6px;
+        object-fit: cover;
+      }
+
+      .info {
+        h4 {
+          font-size: 15px;
+          font-weight: bold;
+          margin-bottom: 4px;
+        }
+        p {
+          font-size: 13px;
+          color: #bbb;
+          margin-bottom: 4px;
+        }
+        span {
+          font-size: 12px;
+          color: #888;
+        }
+      }
+    }
+  }
+
+  .movie-info {
+    display: flex;
+    gap: 24px;
+    padding: 20px;
+    background-color: #111;
+    color: #fff;
+    border-radius: 8px;
+
+    .poster {
+      flex: 0 0 200px;
+
+      height: 350px;
+    }
+
+    .details {
+      flex: 1;
+
+      .title {
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .subtitle {
+        font-size: 16px;
+        color: #f05a5a;
+        margin-bottom: 12px;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 12px;
+
+        span {
+          background: #222;
+          padding: 4px 10px;
+          border-radius: 6px;
+          font-size: 13px;
+          color: #ddd;
+        }
+
+        .imdb {
+          background: #ffcc00;
+          color: #000;
+          font-weight: 600;
+
+          b {
+            margin-left: 4px;
+          }
+        }
+
+        .age {
+          background: #fff;
+          color: #000;
+          font-weight: 600;
+        }
+      }
+
+      .genres {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 12px;
+
+        span {
+          background: #333;
+          padding: 4px 12px;
+          border-radius: 6px;
+          font-size: 13px;
+        }
+      }
+
+      .status {
+        margin-bottom: 12px;
+
+        span {
+          background: #093c22;
+          color: #4caf50;
+          padding: 6px 14px;
+          border-radius: 20px;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+
+      .description {
+        font-size: 14px;
+        color: #aaa;
+        line-height: 1.6;
+        margin-bottom: 10px;
+        max-width: 600px;
+      }
+
+      .more-info {
+        font-size: 14px;
+        color: #fecf59;
+        font-weight: 500;
+        text-decoration: none;
+        span {
+          font-size: 12px;
+          font-weight: 300;
+        }
+        px &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
