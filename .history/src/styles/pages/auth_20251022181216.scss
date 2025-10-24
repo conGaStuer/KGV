@@ -1,0 +1,40 @@
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1c1c25;
+
+  .auth-card {
+    background: #2c2c38;
+    padding: 30px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: center;
+    color: white;
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #e5322d;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    p {
+      margin-top: 10px;
+    }
+  }
+}
